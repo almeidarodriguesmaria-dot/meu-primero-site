@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site de filmes</title>
+    <style>
+        header {
+            background-color: rgb(109, 92, 193);
+            color: #f4eded;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meu primeiro site de filmes</h1>
+        <p>Vou ensinar vocês a criarem um site do zero.</p>
+    </header> <!-- Corrigido: adicionada a barra de fechamento -->
+
+    <main>
+        <h2>Esse é o primeiro site do primeirão</h2>
+        <p>por: Maria eduarda</p>
+        <p>Seja bem-vindo ao site do primeirão</p>
+    </main> <!-- Corrigido: adicionada a barra de fechamento -->
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Indicações de Filmes</title>
+    <style>
+        /* Configurações Gerais e Tons Pastéis */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f5ff; /* Fundo lilás bem clarinho */
+            color: #4a3e56; /* Texto roxo acinzentado escuro */
+        }
+
+        /* Entrada Bonita (Seção Hero) */
+        .entrada-hero {
+            background: linear-gradient(135deg, #dcd6f7, #f4eeff); /* Degradê roxo pastel */
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #b8a9c9;
+        }
+
+        .entrada-hero h1 {
+            font-size: 3rem;
+            color: #624a75; /* Roxo pastel escuro */
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .entrada-hero p {
+            font-size: 1.2rem;
+            color: #7b688c;
+            margin: 0 0 25px 0;
+        }
+
+        .botao-hero {
+            background-color: #a696c7; /* Roxo médio pastel */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(166, 150, 199, 0.4);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .botao-hero:hover {
+            background-color: #8c7aa9;
+            transform: translateY(-2px);
+        }
+
+        /* Informações do Autor */
+        .autor-box {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #9b8ba6;
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Abas com Indicações de Filmes */
+        .menu-abas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .aba-item {
+            background-color: #ffffff;
+            color: #624a75;
+            padding: 10px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #e1dbf5;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo da Aba Ativa/Selecionada */
+        .aba-item.ativa, .aba-item:hover {
+            background-color: #624a75;
+            color: #ffffff;
+            border-color: #624a75;
+        }
+
+        /* Grade de Filmes */
+        .grade-filmes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cartão de Filme Pastel */
+        .cartao-filme {
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(166, 150, 199, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eeeaff;
+        }
+
+        .cartao-filme:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(166, 150, 199, 0.3);
+        }
+
+        .cartao-filme img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .info-filme {
+            padding: 25px;
+        }
+
+        .info-filme h3 {
+            margin: 0 0 10px 0;
+            color: #4a3e56;
+            font-size: 1.5rem;
+        }
+
+        .tag-categoria {
+            background-color: #ffdeeb; /* Rosa pastel para contraste */
+            color: #b35980;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .info-filme p {
+            color: #6c5f78;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #e1dbf5;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            color: #624a75;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Entrada Bonita (Hero Section) -->
+    <header class="entrada-hero">
+        <h1>Bem-vindo ao CinePrime</h1>
+        <p>Descubra as melhores indicações de filmes separadas especialmente para você.</p>
+        <a href="#indicaçoes" class="botao-hero">Explorar Filmes</a>
+    </header>
+
+    <div class="autor-box">
+        <p>Criado com carinho por: <strong>Maria Eduarda</strong> 💜</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main id="indicaçoes">
+        
+        <!-- Abas de Indicações -->
+        <nav>
+            <ul class="menu-abas">
+                <li><a href="#" class="aba-item ativa">🔥 Populares</a></li>
+                <li><a href="#" class="aba-item">🎬 Lançamentos</a></li>
+                <li><a href="#" class="aba-item">🍿 Clássicos</a></li>
+                <li><a href="#" class="aba-item">⭐ Favoritos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Grade de Filmes -->
+        <section class="grade-filmes">
+
+            <!-- Filme 1 -->
+            <article class="cartao-filme">
+                <img src="https://unsplash.com" alt="Capa do Filme 1">
+                <div class="info-filme">
+                    <span class="tag-categoria">Ficção Científica</span>
+                    <h3>A Viagem Estelar</h3>
+                    <p>Uma jornada emocionante através de buracos de minhoca e galáxias distantes para salvar o futuro da humanidade.</p>
+                </div>
+            </article>
+
+            <!-- Filme 2 -->
+            <article class="cartao-filme">
+                <img src="https://unsplash.com" alt="Capa do Filme 2">
+                <div class="info-filme">
+                    <span class="tag-categoria">Mistério</span>
+                    <h3>O Enigma da Noite</h3>
+                    <p>Um detetive aposentado é forçado a voltar à ativa quando uma série de pistas misteriosas surge em sua pequena cidade.</p>
+                </div>
+            </article>
+
+            <!-- Filme 3 -->
+            <article class="cartao-filme">
+                <img src="https://unsplash.com" alt="Capa do Filme 3">
+                <div class="info-filme">
+                    <span class="tag-categoria">Animação</span>
+                    <h3>O Mundo de Papel</h3>
+                    <p>Dois bonecos de origami ganham vida e partem em uma grande aventura pelo quarto de uma criança criativa.</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 CinePrime — Desenvolvido no Primeirão por Maria Eduarda.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Indicações de Filmes</title>
+    <style>
+        /* Configurações Gerais e Tons Pastéis */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f5ff; /* Fundo lilás bem clarinho */
+            color: #4a3e56; /* Texto roxo acinzentado escuro */
+            scroll-behavior: smooth;
+        }
+
+        /* Entrada Bonita (Seção Hero) */
+        .entrada-hero {
+            background: linear-gradient(135deg, #dcd6f7, #f4eeff); /* Degradê roxo pastel */
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #b8a9c9;
+        }
+
+        .entrada-hero h1 {
+            font-size: 3rem;
+            color: #624a75; /* Roxo pastel escuro */
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .entrada-hero p {
+            font-size: 1.2rem;
+            color: #7b688c;
+            margin: 0 0 25px 0;
+        }
+
+        .botao-hero {
+            background-color: #a696c7; /* Roxo médio pastel */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(166, 150, 199, 0.4);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .botao-hero:hover {
+            background-color: #8c7aa9;
+            transform: translateY(-2px);
+        }
+
+        /* Informações do Autor */
+        .autor-box {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #9b8ba6;
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Abas com Indicações de Filmes */
+        .menu-abas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .aba-item {
+            background-color: #ffffff;
+            color: #624a75;
+            padding: 10px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #e1dbf5;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo da Aba Ativa/Selecionada */
+        .aba-item.ativa, .aba-item:hover {
+            background-color: #624a75;
+            color: #ffffff;
+            border-color: #624a75;
+        }
+
+        /* Grade de Filmes */
+        .grade-filmes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cartão de Filme Pastel */
+        .cartao-filme {
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(166, 150, 199, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eeeaff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cartao-filme:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(166, 150, 199, 0.3);
+        }
+
+        .cartao-filme img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .info-filme {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .info-filme h3 {
+            margin: 0 0 10px 0;
+            color: #4a3e56;
+            font-size: 1.5rem;
+        }
+
+        .tag-categoria {
+            background-color: #ffdeeb; /* Rosa pastel para contraste */
+            color: #b35980;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .info-filme p {
+            color: #6c5f78;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #e1dbf5;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            color: #624a75;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Entrada Bonita (Hero Section) -->
+    <header class="entrada-hero">
+        <h1>Bem-vindo ao CinePrime</h1>
+        <p>Descubra as melhores indicações de filmes separadas especialmente para você.</p>
+        <a href="#indicaçoes" class="botao-hero">Explorar Filmes</a>
+    </header>
+
+    <div class="autor-box">
+        <p>Criado com carinho por: <strong>Maria Eduarda</strong> 💜</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main id="indicaçoes">
+        
+        <!-- Abas de Indicações baseadas em botões interativos -->
+        <nav>
+            <ul class="menu-abas">
+                <li><button class="aba-item ativa" onclick="filtrarAbas('populares')">🔥 Populares</button></li>
+                <li><button class="aba-item" onclick="filtrarAbas('lancamentos')">🎬 Lançamentos</button></li>
+                <li><button class="aba-item" onclick="filtrarAbas('classicos')">🍿 Clássicos</button></li>
+                <li><button class="aba-item" onclick="filtrarAbas('favoritos')">⭐ Favoritos</button></li>
+            </ul>
+        </nav>
+
+        <!-- Grade única contendo todos os filmes com marcações de categoria -->
+        <section class="grade-filmes">
+
+            <!-- FILMES DA CATEGORIA: POPULARES -->
+            <article class="cartao-filme" data-aba="populares">
+                <img src="https://unsplash.com" alt="Avatar: O Caminho da Água">
+                <div class="info-filme">
+                    <span class="tag-categoria">Ficção Científica</span>
+                    <h3>Avatar: O Caminho da Água</h3>
+                    <p>Jake Sully vive com sua nova família no planeta Pandora. Quando uma antiga ameaça ressurge, ele deve liderar um exército para proteger seu povo em uma jornada marítima.</p>
+                </div>
+            </article>
+
+            <article class="cartao-filme" data-aba="populares">
+                <img src="https://unsplash.com" alt="Batman">
+                <div class="info-filme">
+                    <span class="tag-categoria">Ação / Suspense</span>
+                    <h3>The Batman</h3>
+                    <div class="estrelas"></div>
+                    <p>Nos dois anos de sua caça aos criminosos, Bruce Wayne é levado às sombras profundas de Gotham City quando um assassino de elite começa a deixar pistas enigmáticas.</p>
+                </div>
+            </article>
+
+            <!-- FILMES DA CATEGORIA: LANÇAMENTOS -->
+            <article class="cartao-filme" data-aba="lancamentos" style="display: none;">
+                <img src="https://unsplash.com" alt="Duna: Parte Dois">
+                <div class="info-filme">
+                    <span class="tag-categoria">Ficção Científica / Épico</span>
+                    <h3>Duna: Parte Dois</h3>
+                    <p>Paul Atreides se une a Chani e aos Fremen em uma jornada de vingança contra os conspiradores que destruíram sua família, tentando evitar um futuro terrível.</p>
+                </div>
+            </article>
+
+            <article class="cartao-filme" data-aba="lancamentos" style="display: none;">
+                <img src="https://unsplash.com" alt="Divertida Mente 2">
+                <div class="info-filme">
+                    <span class="tag-categoria">Animação / Família</span>
+                    <h3>Divertida Mente 2</h3>
+                    <p>A mente de Riley passa por uma mudança repentina com a chegada de novas emoções na central de comando! A Ansiedade promete bagunçar toda a rotina.</p>
+                </div>
+            </article>
+
+            <!-- FILMES DA CATEGORIA: CLÁSSICOS -->
+            <article class="cartao-filme" data-aba="classicos" style="display: none;">
+                <img src="https://unsplash.com" alt="Interestelar">
+                <div class="info-filme">
+                    <span class="tag-categoria">Ficção Científica / Drama</span>
+                    <h3>Interestelar</h3>
+                    <p>Um grupo de astronautas viaja através de um buraco de minhoca recém-descoberto em busca de um novo lar para a humanidade após a Terra ficar sem recursos.</p>
+                </div>
+            </article>
+
+            <article class="cartao-filme" data-aba="classicos" style="display: none;">
+                <img src="https://unsplash.com" alt="Titanic">
+                <div class="info-filme">
+                    <span class="tag-categoria">Romance / Drama</span>
+                    <h3>Titanic</h3>
+                    <p>Um artista pobre e uma jovem rica se conhecem e se apaixonam perdidamente a bordo do luxuoso e inafundável navio transatlântico Titanic em 1912.</p>
+                </div><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Seu Guia de Filmes e Séries</title>
+    <!-- Importação de Fonte Moderna do Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Configurações Gerais e Tipografia */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f5fa; 
+            color: #2b2333;
+            scroll-behavior: smooth;
+        }
+
+        /* Entrada de Alto Impacto (Hero Section / Cabeçalho) */
+        .entrada-hero {
+            background: linear-gradient(135deg, #c3b4e6, #e7e2f7, #fdfbff);
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 4px solid #bbaed9;
+            box-shadow: inset 0 -15px 30px rgba(152, 133, 194, 0.05);
+        }
+
+        .entrada-hero h1 {
+            font-size: 4.5rem;
+            color: #2d193f;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .entrada-hero p {
+            font-size: 1.45rem;
+            color: #4f3b61;
+            margin: 0 0 40px 0;
+            font-weight: 600;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .botao-hero {
+            background-color: #725ba1;
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(114, 91, 161, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .botao-hero:hover {
+            background-color: #594485;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(114, 91, 161, 0.6);
+        }
+
+        /* Informações da Autora */
+        .autor-box {
+            text-align: center;
+            margin: 35px 0;
+            font-size: 1.15rem;
+            color: #69557a;
+        }
+
+        /* Container de Conteúdo */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+        /* Barra de Pesquisa */
+        .container-pesquisa {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .barra-pesquisa {
+            width: 100%;
+            max-width: 550px;
+            padding: 15px 25px;
+            font-size: 1.05rem;
+            border: 2px solid #e1dbf5;
+            border-radius: 30px;
+            outline: none;
+            color: #2b2333;
+            box-shadow: 0 5px 15px rgba(152, 133, 194, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .barra-pesquisa:focus {
+            border-color: #725ba1;
+            box-shadow: 0 6px 20px rgba(114, 91, 161, 0.25);
+        }
+
+        /* Menu de Abas Coloridas */
+        .menu-abas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .aba-item {
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .aba-todos { color: #523b66; border-color: #e3dcfa; }
+        .aba-todos.ativa, .aba-todos:hover { background-color: #523b66; color: white; border-color: #523b66; }
+
+        .aba-populares { color: #1e6091; border-color: #b5e2fa; }
+        .aba-populares.ativa, .aba-populares:hover { background-color: #1e6091; color: white; border-color: #1e6091; }
+
+        .aba-lancamentos { color: #d94e34; border-color: #ffccd5; }
+        .aba-lancamentos.ativa, .aba-lancamentos:hover { background-color: #d94e34; color: white; border-color: #d94e34; }
+
+        .aba-classicos { color: #2d6a4f; border-color: #d8f3dc; }
+        .aba-classicos.ativa, .aba-classicos:hover { background-color: #2d6a4f; color: white; border-color: #2d6a4f; }
+
+        .aba-favoritos { color: #a67c00; border-color: #fefae0; }
+        .aba-favoritos.ativa, .aba-favoritos:hover { background-color: #bfa100; color: white; border-color: #bfa100; }
+
+        .aba-comentarios { color: #a15b80; border-color: #ffdce8; }
+        .aba-comentarios.ativa, .aba-comentarios:hover { background-color: #a15b80; color: white; border-color: #a15b80; }
+
+        /* Grade Dinâmica de Exibição */
+        .grade-filmes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        /* Cartão de Filme Premium */
+        .cartao-filme {
+            background-color: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(152, 133, 194, 0.08);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            border: 1px solid #eae6f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cartao-filme:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(114, 91, 161, 0.18);
+        }
+
+        /* Capa clicável com cursor de ponteiro e efeito */
+        .cartao-filme img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.3s ease;
+        }
+
+        .cartao-filme:hover img {
+            transform: scale(1.02);
+        }
+
+        .cartao-filme img:hover {
+            opacity: 0.9;
+        }
+
+        /* Textos Internos */
+        .info-filme {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .info-filme h3 {
+            margin: 0 0 8px 0;
+            color: #241a2e;
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .estrelas {
+            color: #ffb703; 
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .tag-categoria {
+            background-color: #f1edfa; 
+            color: #5c4485;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+
+        .info-filme p {
+            color: #53475e;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+
+        .texto-dica-clique {
+            font-size: 0.85rem;
+            color: #9c8fb0;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Links para entrar no trailer */
+        .botao-trailer {
+            margin-top: auto; 
+            background-color: #f1edfa;
+            color: #402d54;
+            text-align: center;
+            padding: 15px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 1px solid #dbd3f0;
+        }
+
+        .botao-trailer:hover {
+            background-color: #402d54;
+            color: white;
+        }
+
+        /* ESTRUTURA DO MODAL (A NOVA PÁGINA INTERNA) */
+        .janela-modal {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(45, 25, 63, 0.6); 
+            backdrop-filter: blur(8px); 
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .conteudo-modal {
+            background-color: #ffffff;
+            border-radius: 24px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: abrirModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes abrirModal {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .fechar-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #9c8fb0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .fechar-modal:hover {
+            color: #402d54;
+        }
+
+        .modal-titulo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #241a2e;
+            margin: 0 0 10px 0;
+        }
+
+DOCTYPE html>
+html lang pt-br
+head>
+   
+    
+    style>
+        /* Variáveis de Cores para o Modo Claro e Escuro */
+        :root {
+            --bg-principal: #f6f5fa;
+            --bg-card: #ffffff;
+            --texto-principal: #2b2333;
+            --texto-secundario: #53475e;
+            --borda: #eae6f5;
+            --hero-gradient: linear-gradient(135deg, #c3b4e6, #e7e2f7, #fdfbff);
+        }
+
+        [data-theme="dark"] {
+            --bg-principal: #120f1a;
+            --bg-card: #1c1826;
+            --texto-principal: #f0ecf4;
+            --texto-secundario: #b3a7c2;
+            --borda: #2e263a;
+            --hero-gradient: linear-gradient(135deg, #2d193f, #1c132b, #120f1a);
+        }
+
+        /* Configurações Gerais e Tipografia */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-principal); 
+            color: var(--texto-principal);
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Botão Flutuante do Modo Escuro */
+        .alternador-tema {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--bg-card);
+            border: 2px solid var(--borda);
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--texto-principal);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        /* Entrada de Alto Impacto (Hero Section) */
+        .entrada-hero {
+            background: var(--hero-gradient);
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 4px solid #bbaed9;
+            box-shadow: inset 0 -15px 30px rgba(152, 133, 194, 0.05);
+            position: relative;
+        }
+
+        .entrada-hero h1 {
+            font-size: 4.5rem;
+            color: #2d193f;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+        [data-theme="dark"] .entrada-hero h1 { color: #f0ecf4; }
+
+        .entrada-hero p {
+            font-size: 1.45rem;
+            color: #4f3b61;
+            margin: 0 0 40px 0;
+            font-weight: 600;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        [data-theme="dark"] .entrada-hero p { color: #b3a7c2; }
+
+        .botao-hero {
+            background-color: #725ba1;
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(114, 91, 161, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .botao-hero:hover {
+            background-color: #594485;
+            transform: translateY(-4px);
+        }
+
+        /* Informações da Autora */
+        .autor-box {
+            text-align: center;
+            margin: 35px 0;
+            font-size: 1.15rem;
+            color: var(--texto-secundario);
+        }
+
+        /* Container de Conteúdo */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+        /* Barra de Pesquisa */
+        .container-pesquisa {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .barra-pesquisa {
+            width: 100%;
+            max-width: 550px;
+            padding: 15px 25px;
+            font-size: 1.05rem;
+            border: 2px solid var(--borda);
+            border-radius: 30px;
+            outline: none;
+            background-color: var(--bg-card);
+            color: var(--texto-principal);
+            box-shadow: 0 5px 15px rgba(152, 133, 194, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .barra-pesquisa:focus {
+            border-color: #725ba1;
+        }
+
+        /* Menu de Abas Coloridas */
+        .menu-abas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .aba-item {
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .aba-todos { color: #523b66; border-color: #e3dcfa; }
+        .aba-todos.ativa, .aba-todos:hover { background-color: #523b66; color: white; border-color: #523b66; }
+
+        .aba-populares { color: #1e6091; border-color: #b5e2fa; }
+        .aba-populares.ativa, .aba-populares:hover { background-color: #1e6091; color: white; border-color: #1e6091; }
+
+        .aba-lancamentos { color: #d94e34; border-color: #ffccd5; }
+        .aba-lancamentos.ativa, .aba-lancamentos:hover { background-color: #d94e34; color: white; border-color: #d94e34; }
+
+        .aba-classicos { color: #2d6a4f; border-color: #d8f3dc; }
+        .aba-classicos.ativa, .aba-classicos:hover { background-color: #2d6a4f; color: white; border-color: #2d6a4f; }
+
+        .aba-favoritos { color: #a67c00; border-color: #fefae0; }
+        .aba-favoritos.ativa, .aba-favoritos:hover { background-color: #bfa100; color: white; border-color: #bfa100; }
+
+        .aba-comentarios { color: #a15b80; border-color: #ffdce8; }
+        .aba-comentarios.ativa, .aba-comentarios:hover { background-color: #a15b80; color: white; border-color: #a15b80; }
+
+        /* Grade Dinâmica de Exibição */
+        .grade-filmes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        /* Cartão de Filme Premium */
+        .cartao-filme {
+            background-color: var(--bg-card);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(152, 133, 194, 0.08);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            border: 1px solid var(--borda);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cartao-filme:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(114, 91, 161, 0.18);
+        }
+
+        .cartao-filme img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.3s ease;
+        }
+
+        .cartao-filme:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Informações e Textos */
+        .info-filme {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .info-filme h3 {
+            margin: 0 0 8px 0;
+            color: var(--texto-principal);
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        /* Sistema de Notas e Likes no Card */
+        .reacoes-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .estrelas {
+            color: #ffb703; 
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .botao-like {
+            background: none;
+            border: 1px solid var(--borda);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            color: var(--texto-principal);
+            background-color: var(--bg-principal);
+            transition: transform 0.2s, backgroud 0.2s;
+        }
+
+        .botao-like:hover {
+            transform: scale(1.05);
+            background-color: #ffdeeb;
+            color: #b35980;
+        }
+
+        .tag-categoria {
+            background-color: #f1edfa; 
+            color: #5c4485;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+
+        .info-filme p {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+
+        .texto-dica-clique {
+            font-size: 0.85rem;
+            color: #9c8fb0;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Links para entrar no trailer */
+        .botao-trailer {
+            margin-top: auto; 
+            background-color: #f1edfa;
+            color: #402d54;
+            text-align: center;
+            padding: 15px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 1px solid #dbd3f0;}
+
+       
+
+ 
+
+       
+
+
+
+
